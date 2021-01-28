@@ -17,8 +17,32 @@ body {
     line-height: 20px;
 }
 
+.title {
+    margin-bottom: 5vh;
+}
+
+h1 {
+    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1em;
+}
+
+small {
+    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--secondary-light);
+    margin-top: 0;
+}
+
+a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .content {
-    max-width: 50%;
+    max-width: 60%;
     display: block;
     padding: 10px;
     margin: auto;

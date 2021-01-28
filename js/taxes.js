@@ -1,8 +1,8 @@
 function drawTaxChart() {
 
     // constant margins, width, and height
-    var margin = {top: 60, right: 20, bottom: 50, left: 60},
-    width = 500 - margin.left - margin.right,
+    var margin = {top: 60, right: 100, bottom: 50, left: 60},
+    width = 700 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
 
 
