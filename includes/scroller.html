@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scrolling Sections</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <p>
+            Typewriter pickled twee, godard subway tile normcore mumblecore. Wolf taiyaki vice franzen farm-to-table selfies leggings polaroid thundercats man bun mustache woke fam post-ironic. Chillwave prism VHS af whatever pabst health goth farm-to-table salvia celiac retro. Cred activated charcoal iceland cardigan typewriter retro readymade af intelligentsia 90's keytar. Craft beer vinyl cray actually succulents locavore affogato salvia. Kinfolk la croix coloring book PBR&B occupy ramps tacos taiyaki migas.
+
+<br><br>Thundercats hammock cornhole man braid, YOLO four dollar toast venmo poutine succulents. Actually pabst godard asymmetrical, hexagon artisan aesthetic. Fingerstache tousled brooklyn bespoke. Cliche prism echo park man bun PBR&B. Succulents YOLO wayfarers snackwave, brooklyn waistcoat cred vegan biodiesel sriracha umami etsy photo booth vape. Yuccie authentic single-origin coffee tacos heirloom hexagon organic.
+
+<br><br>Pop-up paleo cliche flannel live-edge man braid. Vinyl vaporware single-origin coffee tote bag tofu, pinterest XOXO succulents polaroid try-hard. Single-origin coffee succulents distillery portland polaroid biodiesel cred. Gentrify ramps sriracha four dollar toast. Slow-carb art party chia prism pop-up. VHS put a bird on it hot chicken, tacos blue bottle raw denim poutine cred vice 8-bit slow-carb meh direct trade meggings. Keytar plaid umami, unicorn kombucha vexillologist thundercats readymade snackwave photo booth 90's.
+        </p>
+    </div>>
+      
+    <section id='budget-section' style="position: relative;">
+        
+        <!--  sticky graphic   -->
+        <figure class="sticky">
+            <div class='budget-charts'></div>
+        </figure>
+        
+        <!--  step text   -->
+        <article>
+            <div class='step' data-index='0'>
+                <p><strong>Budget chart</strong><br>Make some notes about the general fund</p>
+            </div>
+            <div class='step' data-index='1'>
+                <p><strong>Other budgets</strong><br>There's actually 3 total</p>
+            </div>
+            <div class='step' data-index='2'>
+                <p><strong>Revenue chart</strong><br>Look at where general revenue comes from</p> 
+            </div>
+        </article>
+        
+
+    </section>
+      
+    <div class="content" style="margin-top: 20vh;">
+        <p>
+            I'm baby schlitz prism tote bag normcore taiyaki tattooed PBR&B. Meditation franzen XOXO, unicorn tilde fanny pack keffiyeh hammock. Lyft af pickled, cronut authentic blue bottle mumblecore lumbersexual kogi readymade deep v cray mixtape live-edge. 8-bit lo-fi brunch freegan air plant, blog pug celiac. Pop-up gochujang semiotics crucifix stumptown irony.
+
+<br><br>Occupy mlkshk squid, shaman sustainable health goth sartorial taiyaki. Pork belly kickstarter retro viral, sartorial humblebrag flexitarian celiac hella aesthetic whatever fingerstache cred coloring book cronut. Fixie cliche artisan, 90's semiotics prism photo booth hell of cloud bread post-ironic keffiyeh subway tile pabst schlitz. IPhone cred before they sold out gluten-free copper mug, yr franzen unicorn flannel pitchfork snackwave pickled heirloom salvia.
+
+<br><br>Pork belly 90's godard marfa knausgaard skateboard asymmetrical live-edge mumblecore tbh af ugh blue bottle helvetica. Shaman flannel godard truffaut photo booth artisan. Mixtape marfa pug, hammock +1 leggings quinoa master cleanse austin. Godard wolf meggings man braid hashtag pork belly bitters cold-pressed taiyaki meh pour-over stumptown fanny pack austin crucifix. 90's narwhal tbh hashtag chillwave heirloom truffaut selfies fingerstache kickstarter fam distillery iceland. Polaroid waistcoat swag iPhone subway tile farm-to-table, neutra air plant post-ironic microdosing af bitters.
+
+<br><br>Williamsburg sustainable forage dreamcatcher kale chips glossier. Snackwave tbh vaporware lomo pork belly thundercats iPhone vinyl helvetica kogi sriracha polaroid before they sold out. Palo santo 90's freegan waistcoat lyft skateboard man braid. Tofu meggings man bun af semiotics, before they sold out enamel pin fashion axe. Craft beer hashtag bespoke slow-carb normcore shoreditch. Dreamcatcher chartreuse plaid knausgaard, gluten-free cornhole health goth four dollar toast pork belly franzen palo santo coloring book. Humblebrag narwhal asymmetrical green juice man bun shaman.
+
+<br><br>Distillery post-ironic pork belly blog, snackwave taiyaki hoodie echo park venmo mlkshk. Af locavore cloud bread meggings direct trade stumptown. Jean shorts franzen taxidermy, affogato chartreuse small batch wayfarers tofu tousled selfies PBR&B vegan craft beer. Organic listicle authentic, aesthetic green juice man bun enamel pin gluten-free typewriter microdosing farm-to-table master cleanse hoodie synth.
+        </p>
+    </div>
+
+<script type="text/javascript" src="./js/tax.js"></script>
+<script type="text/javascript" src="./js/budget.js"></script>
+<script src="https://unpkg.com/enter-view"></script>
+<script>
+
+    drawBudgetChartGeneral();
+    var rev = drawRevenueChart();
+    var debt, food = drawBudgetChartsSecondary();
+
+    const container = d3.select('#budget-section');
+    const stepSel = container.selectAll('.step');
+    enterView({
+        selector: stepSel.nodes(),
+        offset: 0.5,
+        enter: el => {
+            const index = +d3.select(el).attr('data-index');
+            updateChart(index);
+            d3.select(el).attr("class", "step is-active");
+            console.log("add class");
+        },
+        exit: el => {
+            let index = +d3.select(el).attr('data-index');
+            index = Math.max(0, index - 1);
+            updateChart(index);
+            d3.select(el).attr("class", "step");
+        }
+    });
+
+    function updateChart(index) {
+        rev = d3.select(".revenue-budget");
+        food = d3.select(".food-budget");
+        debt = d3.select(".debt-budget");
+
+        if (index == 0) {
+            hideChart(debt);
+            hideChart(food);
+            hideChart(rev);
+        }
+        else if (index == 1) {
+            showChart(debt);
+            showChart(food);
+            hideChart(rev);
+        }
+        else if (index = 2) {
+            hideChart(debt);
+            hideChart(food);
+            showChart(rev);
+        }
+    }
+</script>
+
+</body>
+</html>
