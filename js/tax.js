@@ -55,7 +55,7 @@ function drawTaxChart() {
 
 
     // import the data and plot
-    d3.csv("../data/property_tax.csv").then(function(data) {
+    d3.csv("https://raw.githubusercontent.com/coppellstudentmedia/budget/master/data/property_tax.csv").then(function(data) {
 
         // format the data
         data.forEach(function(d) {
