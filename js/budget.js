@@ -26,7 +26,7 @@ function drawBudgetChartGeneral() {
 
 
     // add in our general budget data and plot!!
-    d3.csv("https://raw.githubusercontent.com/coppellstudentmedia/budget/master/data/general_budget_breakdown_groups.csv").then(function(data) {
+    d3.csv("./data/general_budget_breakdown_groups.csv").then(function(data) {
 
         // format the data
         data.forEach(function(d) {
@@ -110,7 +110,7 @@ function drawRevenueChart() {
 
 
     // add in our general revenue data and plot!!
-    d3.csv("https://raw.githubusercontent.com/coppellstudentmedia/budget/master/data/general_revenue.csv").then(function(data) {
+    d3.csv("./data/general_revenue.csv").then(function(data) {
 
         // format the data
         data.forEach(function(d) {
