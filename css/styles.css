@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Rubik:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-    --background: #e7dfd5;
-    --secondary: #463841;
-    --secondary-light: #7a6673;
+    --background: rgb(232,227,229);
+    --secondary: rgb(63,44,74);
+    --secondary-light: rgb(117,159,138);
+    --font-body: 'Amiri', serif;
+    --font-secondary: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 body {
-    font-family: 'Amiri', serif;
+    font-family: var(--font-body);
     font-size: 18px;
     color: var(--secondary);
     background: var(--background);
@@ -25,9 +27,13 @@ main {
     padding: 0;
 }
 
+.spacer {
+    min-height: 10vh;
+}
+
 
 footer {
-    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-secondary);
     line-height: 1em;
     font-weight: 400;
     font-size: 14px;
@@ -50,12 +56,12 @@ footer {
 }
 
 h1 {
-    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-secondary);
     line-height: 1em;
 }
 
 small {
-    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-secondary);
     color: var(--secondary-light);
     margin-top: 0;
 }
@@ -106,7 +112,7 @@ a:hover {
 
 .axis, .axis-label {
     font-size: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    font-family: var(--font-secondary);
     color: var(--secondary);
 }
 
@@ -158,7 +164,43 @@ svg, text {
     font-family: 'Rubik', sans-serif;
 }
 
+.pullquote {
+    opacity: 0.7;
+    position: relative;
+    color: white;
+    transition: all 250ms ease-in-out;
+    font-family: var(--font-secondary);
+    background: var(--secondary);
+    padding: 20px;
+    float: left;
+    font-size: 24px;
+    text-align: center;
+    max-width: 40%;
+    margin: 20px 20px 20px 0px;
+  }
+  .pullquote .author {
+    font-family: var(--font-secondary);
+    opacity: 1;
+    color: var(--secondary-light);
+    /* transform: translateY(-100px); */
+    transition: all 250ms ease-in-out;
+    font-size: 14px;
+  }
 
+  .pullquote:hover {
+      opacity: 1;
+      transition: all 250ms ease-in-out;
+  }
+  /* .pullquote:hover .quote {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 250ms ease-in-out;
+  }
+  .pullquote:hover .author {
+    opacity: 1;
+    transform: translateY(-100px);
+    transition: all 250ms ease-in-out;
+  } */
 
 
 /* scroller */
@@ -192,6 +234,7 @@ svg, text {
     margin-bottom: 80vh;
     padding: 10px;
     padding-left: 20px;
+    padding-right: 10px;
     background: white;
     margin-left: 50vw;
     border-radius: 10px;

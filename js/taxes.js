@@ -1,8 +1,8 @@
-function drawTaxChart() {
+function drawTaxChart(w) {
 
     // constant margins, width, and height
     var margin = {top: 60, right: 100, bottom: 50, left: 60},
-    width = 700 - margin.left - margin.right,
+    width = w - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
 
 
@@ -75,7 +75,7 @@ function drawTaxChart() {
             .attr("d", moValueline);
         var moLineArea = svg.append("path")
             .data([data])
-            .style("fill", "#46384180")
+            .style("fill", "var(--secondary)")
             .attr("d", moArea);
 
         var pLine = svg.append("path")
@@ -84,7 +84,7 @@ function drawTaxChart() {
             .attr("d", pValueline);
         var pLineArea = svg.append("path")
             .data([data])
-            .style("fill", "#46384150")
+            .style("fill", "var(--secondary-light)")
             .attr("d", pArea);
 
 

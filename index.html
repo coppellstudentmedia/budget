@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Board faces months of deliberating on budget with 7 million dollar deficit</title>
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
@@ -61,6 +62,12 @@
 <p>The biggest thing right now is we‘ve got to get our spending in check,” Caviness said. “That means we’re going to have to make some tough decisions. We can increase our revenue some but the reality is that it’s not going to solve our problem on its own, we’re gonna have to look at our expenditures. I think that’s really what the board has ahead of itself in terms of what we need to do.”</p>
 <p>The biggest thing the district can do to increase revenue is to relax open enrollment policies. This is a conversation the district has had already—by opening registration to certain people outside CISD, the board can increase the district’s funding through allotment per student. But, as Caviness notes, it would not be enough to combat the gap in funding.</p>
 <p>The board has had a number of conversations about programs where it can eliminate excess capacity. This would consist of programmatic changes, such as sharing staff across multiple campuses in special education programs, for example, or for GT specialists at an elementary school level. The board is also considering administrative costs, and already each department will take a 10 percent budget cut. Improving efficiency in custodial services is another item on the table.</p>
+
+<div class="pullquote">
+    <p class="quote">“We’re basically told here’s all of the walls and here’s the few things that you can control and make a school district operate with."</p>
+    <p class="author">Nichole Bentley</p>
+</div>
+
 <p>Students and parents have responded to many of these conversations. On the Jan. 25 budget workshop, the board stated that cutting New Tech @ Coppell and the International Baccalaureate programs were last on their list after hearing concerns from the community.</p>
 <p>“Nothing has been cut yet. No decisions have been made in regards to any programs,” CISD Chief Financial Officer Diana Sircar said. “Discussions were had and there were certain programs mentioned as opportunities, but a lot of that has to do with things we were just exploring. More information will come out in every budget workshop about explaining those things.”</p>
 <p>In addition, the board emphasizes that students’ and parents’ concerns are being heard, and they strive to stay committed to providing legally obligated services as well as the high quality of education Coppell ISD knows.</p>
@@ -74,6 +81,7 @@
 <p>The district also has a history of committing to a high level of financial transparency, as evidenced by perfect FIRST ratings in past years.</p>
 <p>“I don’t want anybody to think there has been poor management of our district finances. It’s unfortunately a convergence of a lot of bad factors, all at once, that we’re kind of having to address and mitigate,” Bentley said. “The big thing is, please be patient. There’s a lot of things out of our control on the budget, and we want to give every penny we can to the classroom and to our students and to the level of excellence that we all enjoy here in Coppell, and it’s tricky to do that with the limitations that the state’s placed upon us.”</p>
     </div>
+    <div class="spacer"></div>
 </main>
     <footer>
         Words, story design and graphs by <a target="_blank" href="https://coppellstudentmedia.com/staff_profile/neha-desaraju/">Neha Desaraju</a>.<br>
@@ -83,15 +91,17 @@
         <br>All code and data for this project can be found on GitHub.
     </footer>
 
-<script type="text/javascript" src=" ./js/taxes.js "></script>
-<script type="text/javascript" src="./js/budget.js"></script>
+<script type="text/javascript" src="./js/taxes.js"></script>
+<script type="text/javascript" src=" ./js/budgets.js "></script>
 <script src="https://unpkg.com/enter-view"></script>
 <script>
 
-    drawTaxChart();
-    drawBudgetChartGeneral();
-    var rev = drawRevenueChart();
-    var debt, food = drawBudgetChartsSecondary();
+    var graphContentWidth = window.innerWidth - 50;
+
+    drawTaxChart(graphContentWidth - 300);
+    drawBudgetChartGeneral(graphContentWidth);
+    var rev = drawRevenueChart(graphContentWidth);
+    var debt, food = drawBudgetChartsSecondary(graphContentWidth);
 
     const container = d3.select('#budget-section');
     const stepSel = container.selectAll('.step');

@@ -1,7 +1,7 @@
 function drawBudgetChartGeneral(w) {
     // constant margins, width, and height
     var margin = {top: 50, right: 200, bottom: 20, left: 0};
-    var width = 1000 - margin.left - margin.right;
+    var width = w - margin.left - margin.right;
     var height = 120 - margin.top - margin.bottom;
 
     // set up our scales
@@ -61,7 +61,7 @@ function drawBudgetChartGeneral(w) {
 
         bars.on("mouseover", function() {
             d3.select(this).transition()
-                .attr("fill", "#7a6673");
+                .attr("fill", "var(--secondary-light)");
             tooltip.attr("display", "inline");
         })
         .on("mouseout", function() {
@@ -82,10 +82,10 @@ function drawBudgetChartGeneral(w) {
 }
 
 
-function drawRevenueChart() {
+function drawRevenueChart(w) {
     // constant margins, width, and height
     var margin = {top: 50, right: 200, bottom: 20, left: 0};
-    var width = 1000 - margin.left - margin.right;
+    var width = w - margin.left - margin.right;
     var height = 120 - margin.top - margin.bottom;
 
     // set up our scales
@@ -146,7 +146,7 @@ function drawRevenueChart() {
 
         bars.on("mouseover", function() {
             d3.select(this).transition()
-                .attr("fill", "#7a6673");
+                .attr("fill", "var(--secondary-light)");
             tooltip.attr("display", "inline");
         })
         .on("mouseout", function() {
@@ -173,10 +173,10 @@ function drawRevenueChart() {
 
 
 // default off
-function drawBudgetChartsSecondary() {
+function drawBudgetChartsSecondary(w) {
 
     var margin = {top: 50, right: 200, bottom: 20, left: 0};
-    var width = 1000 - margin.left - margin.right;
+    var width = w - margin.left - margin.right;
     var height = 120 - margin.top - margin.bottom;
 
     // -------- CREATE STATIC BARS --------
