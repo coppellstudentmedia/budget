@@ -1,4 +1,4 @@
-function drawBudgetChartGeneral() {
+function drawBudgetChartGeneral(w) {
     // constant margins, width, and height
     var margin = {top: 50, right: 200, bottom: 20, left: 0};
     var width = 1000 - margin.left - margin.right;
