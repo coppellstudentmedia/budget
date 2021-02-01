@@ -75,7 +75,7 @@ function drawTaxChart(w) {
             .attr("d", moValueline);
         var moLineArea = svg.append("path")
             .data([data])
-            .style("fill", "var(--secondary)")
+            .style("fill", "var(--secondary-thin)")
             .attr("d", moArea);
 
         var pLine = svg.append("path")
@@ -84,7 +84,7 @@ function drawTaxChart(w) {
             .attr("d", pValueline);
         var pLineArea = svg.append("path")
             .data([data])
-            .style("fill", "var(--secondary-light)")
+            .style("fill", "var(--secondary-light-thin)")
             .attr("d", pArea);
 
 
