@@ -1,8 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
     <meta charset="utf-8">
-    <title>Board faces months of deliberating on budget with 7 million dollar deficit</title>
+    <meta name="author" content="Neha Desaraju">
+    <meta name="description" content="A myriad of new state legislation, COVID-19 expenses and old budget changes has made 
+    an impact on the Coppell ISD 2020-21 proposed budget in the form of a $7 million projected budget deficit. The Board 
+    of Trustees has proposed solutions to combat this deficit.">
+    <link rel="shortcut icon" href="./assets/CSMLOGO.png" type="image/x-icon">
+    <meta property="og:image" content="./assets/vonita_background_quote.png">
+    <meta property="og:description" content="A myriad of new state legislation, COVID-19 expenses and old budget changes has made 
+    an impact on the Coppell ISD 2020-21 proposed budget in the form of a $7 million projected budget deficit. The Board 
+    of Trustees has proposed solutions to combat this deficit.">
+    <meta property="og:title" content="Not in the books: Board faces months of deliberating on budget with $7 million deficit — Coppell Student Media">
+    <title>Not in the books: Board faces months of deliberating on budget with $7 million deficit — Coppell Student Media</title>
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
@@ -10,7 +20,7 @@
 
     <div class="header">
         <div class="title">
-            <h1>Board faces months of deliberating on budget with 7 million dollar deficit</h1>
+            <h1>Not in the books: Board faces months of deliberating on budget with $7 million deficit</h1>
             <small class="subtitle">Story and graphics by <a target="_blank" href="https://coppellstudentmedia.com/staff_profile/neha-desaraju/">Neha Desaraju</a></small>
         </div>
     </div>
@@ -98,6 +108,12 @@
 <script type="text/javascript" src=" ./js/budgets.js "></script>
 <script src="https://unpkg.com/enter-view"></script>
 <script>
+
+    window.addEventListener('scroll', () => {
+        document.body.style.setProperty('--scroll-header',window.pageYOffset / (document.body.offsetHeight - window.innerHeight * 10));
+        document.body.style.setProperty('--scroll-full',window.pageYOffset / (document.body.offsetHeight - window.innerHeight * 5));
+    }, false);
+
 
     var graphContentWidth = window.innerWidth - 130;
 

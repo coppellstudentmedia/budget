@@ -49,9 +49,22 @@ footer {
 	background-color:var(--secondary);
 	color: white;
 	padding: 10vw;
-	text-align: left;
+    text-align: left;
+    opacity: 0;
+    
+    animation: fade-in 1s linear infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll-full) * -1s);
+
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
 }
 
+@keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+}
 
 .title {
     margin-bottom: 10vh;
@@ -97,6 +110,23 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: -50;
+
+    animation: fade-out 1s linear infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll-header) * -1s);
+
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@keyframes fade-out {
+    to {
+      opacity: 0;
+    }
 }
 
 .tax-chart {
