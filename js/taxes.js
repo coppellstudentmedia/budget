@@ -81,6 +81,7 @@ function drawTaxChart(w) {
         var pLine = svg.append("path")
             .data([data])
             .attr("class", "line")
+            .style("stroke", "var(--secondary-light)")
             .attr("d", pValueline);
         var pLineArea = svg.append("path")
             .data([data])
