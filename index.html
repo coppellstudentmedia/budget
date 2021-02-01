@@ -107,11 +107,8 @@
     <div class="spacer"></div>
 </main>
     <footer>
-        Words, story design and graphs by <a target="_blank" href="https://coppellstudentmedia.com/staff_profile/neha-desaraju/">Neha Desaraju</a>.<br>
-        <br>Data is from the Coppell ISD budget hub. Huge thanks to <em>The Sidekick</em> advisor Chase Wofford, enterprise editor Shreya Beldona, visual media
-        editor Lilly Gorman, and the amazing leadership team and staff. Thank you in particular to those who have taught me and developed D3, withou which I likely
-        would not have made this story.<br>
-        <br>All code and data for this project can be found on GitHub.
+        Follow Neha (<a href="https://twitter.com/nehadesaraju">@nehadesaraju</a>) and <a href="https://twitter.com/CHSCampusNews">@CHSCampusNews</a> on Twitter.<br>
+        <br>Data is from <a href="https://www.coppellisd.com/budget">Coppell ISD</a>. All code and data for this project can be found <a href="https://github.com/coppellstudentmedia/budget">here</a>.
     </footer>
 
 <script type="text/javascript" src="./js/taxes.js"></script>
@@ -141,7 +138,6 @@
             const index = +d3.select(el).attr('data-index');
             updateChart(index);
             d3.select(el).attr("class", "step is-active");
-            console.log("add class");
         },
         exit: el => {
             let index = +d3.select(el).attr('data-index');

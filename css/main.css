@@ -51,6 +51,7 @@ footer {
 	padding: 10vw;
     text-align: left;
     opacity: 0;
+    pointer-events: all;
     
     animation: fade-in 1s linear infinite;
     animation-play-state: paused;
