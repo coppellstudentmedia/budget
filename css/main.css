@@ -18,6 +18,9 @@ body {
     line-height: 20px;
     padding: 0;
     margin: 0;
+
+    --scroll-header: 0;
+    --scroll-full: 0;
 }
 
 main {
@@ -51,7 +54,6 @@ footer {
 	padding: 10vw;
     text-align: left;
     opacity: 0;
-    pointer-events: all;
     
     animation: fade-in 1s linear infinite;
     animation-play-state: paused;
