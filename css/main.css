@@ -298,3 +298,22 @@ svg, text {
 .budget-charts {
     pointer-events: all;
 }
+
+.inline-img {
+    max-width: 50vw;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caption {
+    max-width: 50vw;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--secondary-light);
+    line-height: 15px;
+    margin-top: 20px;
+}
