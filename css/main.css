@@ -18,9 +18,6 @@ body {
     line-height: 20px;
     padding: 0;
     margin: 0;
-
-    --scroll-header: 0;
-    --scroll-full: 0;
 }
 
 main {
@@ -33,7 +30,7 @@ main {
 }
 
 .spacer {
-    min-height: 10vh;
+    min-height: 7vh;
 }
 
 
@@ -117,19 +114,6 @@ a:hover {
     position: -webkit-sticky;
     top: 0;
     z-index: -50;
-
-    animation: fade-out 1s linear infinite;
-    animation-play-state: paused;
-    animation-delay: calc(var(--scroll-header) * -1s);
-
-    animation-iteration-count: 1;
-    animation-fill-mode: both;
-}
-
-@keyframes fade-out {
-    to {
-      opacity: 0;
-    }
 }
 
 .tax-chart {
@@ -158,6 +142,7 @@ a:hover {
     fill: none;
     stroke: var(--secondary);
     stroke-width: 2px;
+    shape-rendering: geometricPrecision;
 }
 
 .axis, .axis-label {

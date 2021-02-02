@@ -7,11 +7,22 @@
     an impact on the Coppell ISD 2020-21 proposed budget in the form of a $7 million projected budget deficit. The Board 
     of Trustees has proposed solutions to combat this deficit.">
     <link rel="shortcut icon" href="./assets/CSMLOGO.png" type="image/x-icon">
+
+    <!-- facebook meta tags -->
     <meta property="og:image" content="./assets/vonita_background_quote.png">
     <meta property="og:description" content="A myriad of new state legislation, COVID-19 expenses and old budget changes has made 
     an impact on the Coppell ISD 2020-21 proposed budget in the form of a $7 million projected budget deficit. The Board 
     of Trustees has proposed solutions to combat this deficit.">
     <meta property="og:title" content="Not in the books: Board faces months of deliberating on budget with $7 million deficit — Coppell Student Media">
+
+    <!-- twitter meta tags -->
+    <meta property="twitter:image" content="./assets/vonita_background_quote.png">
+    <meta property="twitter:description" content="A myriad of new state legislation, COVID-19 expenses and old budget changes has made 
+    an impact on the Coppell ISD 2020-21 proposed budget in the form of a $7 million projected budget deficit. The Board 
+    of Trustees has proposed solutions to combat this deficit.">
+    <meta property="twitter:title" content="Not in the books: Board faces months of deliberating on budget with $7 million deficit — Coppell Student Media">
+
+    
     <title>Not in the books: Board faces months of deliberating on budget with $7 million deficit — Coppell Student Media</title>
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
@@ -25,6 +36,7 @@
         </div>
     </div>
 <main>
+    <div class="spacer"></div>
     <div class="content">
         <p>After a series of lawsuits from low-income school districts against the state, a 1993 group of Texas lawmakers passed a new school funding plan, a complex formula that brought in money from higher-income districts and passed it around the state. Known as recapture, it was meant to distribute access to a good education. Above a certain amount of property tax earnings, property-wealthy send money back to the state. Coppell ISD, as a “Robin Hood” district (as the plan has been dubbed), regularly sends around a third of property taxes back to the state of Texas.</p>
         <p>“It was really designed as a short-term measure to help equalize school funding across the state, with the intent of giving the state legislatures time to come through with an equitable system,” CISD Board of Trustees member David Caviness said. “Unfortunately like everything in politics, what was a short term measure is still in play today and they keep leaning on it. It’s a way for property owners to finance schools across Texas is what it is.”</p>
@@ -103,13 +115,24 @@
 
 <script type="text/javascript" src="./js/taxes.js"></script>
 <script type="text/javascript" src=" ./js/budgets.js "></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://unpkg.com/enter-view"></script>
 <script>
+    var header = $('.header');
+    $(window).on('scroll', function() {
+        var st = $(this).scrollTop();
+        header.css({
+            'opacity' : 1 - st/700
+        });
+    });
 
-    window.addEventListener('scroll', () => {
-        document.body.style.setProperty('--scroll-header',window.pageYOffset / (document.body.offsetHeight - window.innerHeight * 10));
-        document.body.style.setProperty('--scroll-full',window.pageYOffset / (document.body.offsetHeight - window.innerHeight * 5));
-    }, false);
+    var footer = $('footer');
+    $(window).on('scroll', function() {
+        var st = $(this).scrollTop();
+        footer.css({
+            'opacity' : 0 + st/5000
+        });
+    });
 
 
     var graphContentWidth = window.innerWidth - 130;
